@@ -1,10 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TorBoard.Core.Models
 {
 	public class Post : DbEntity
 	{
-		public DateTime CreationDate { get; set; }
-		public string Content { get; set; }
+		[Required] public DateTime CreationDate { get; set; }
+		[Required] [MinLength(10)] public string Content { get; set; }
 	}
 }

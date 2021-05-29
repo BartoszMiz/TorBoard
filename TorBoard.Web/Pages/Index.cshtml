@@ -1,5 +1,8 @@
 ﻿@page
+@using TorBoard.Core.Services
+@using TorBoard.Web.Pages.Shared
 @model IndexModel
+@inject PostService _postService;
 @{
 	ViewData["Title"] = "Home page";
 }
@@ -8,3 +11,8 @@
 	<h1 class="display-4">Welcome</h1>
 	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@foreach (var post in _postService.GetPosts())
+{
+	await Html.RenderPartialAsync("Shared/_PostView", new PostView(post));
+}

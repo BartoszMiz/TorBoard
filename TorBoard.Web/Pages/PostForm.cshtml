@@ -1,0 +1,15 @@
+﻿@page
+@model TorBoard.Web.Pages.PostForm
+
+@{
+	ViewData["Title"] = "Add new post";
+}
+
+<form method="Post">
+	<div class="form-group">
+		<label>Write your post.</label>
+		<textarea class="form-control" rows="3" asp-for="Post.Content"></textarea>
+	</div>
+	<button class="btn btn-success">Post</button>
+	<span asp-validation-for="Post.Content" class="text-danger"></span>
+</form>

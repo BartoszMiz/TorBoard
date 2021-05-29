@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TorBoard.Core;
+using TorBoard.Core.Services;
 
 namespace TorBoard.Web
 {
@@ -28,6 +29,7 @@ namespace TorBoard.Web
 			services.AddDbContext<AppDbContext>(opt =>
 				opt.UseSqlite(Configuration.GetConnectionString("SQLite"), options =>
 					options.MigrationsAssembly("TorBoard.Migrations")));
+			services.AddScoped<PostService>();
 
 			services.AddRazorPages();
 		}
