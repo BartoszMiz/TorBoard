@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorBoard.Web", "TorBoard.Web\TorBoard.Web.csproj", "{5BB06DE2-35DE-4225-A659-E732062C7028}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorBoard.Core", "TorBoard.Core\TorBoard.Core.csproj", "{2DD60D9B-810B-42CF-B4F5-7C3AC71BDA1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorBoard.Migrations", "TorBoard.Migrations\TorBoard.Migrations.csproj", "{F1384913-6995-43EF-A87A-07EB417B9950}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{5BB06DE2-35DE-4225-A659-E732062C7028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BB06DE2-35DE-4225-A659-E732062C7028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BB06DE2-35DE-4225-A659-E732062C7028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD60D9B-810B-42CF-B4F5-7C3AC71BDA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD60D9B-810B-42CF-B4F5-7C3AC71BDA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD60D9B-810B-42CF-B4F5-7C3AC71BDA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD60D9B-810B-42CF-B4F5-7C3AC71BDA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1384913-6995-43EF-A87A-07EB417B9950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1384913-6995-43EF-A87A-07EB417B9950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1384913-6995-43EF-A87A-07EB417B9950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1384913-6995-43EF-A87A-07EB417B9950}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
