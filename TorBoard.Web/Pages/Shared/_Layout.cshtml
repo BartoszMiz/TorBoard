@@ -3,34 +3,45 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>@ViewData["Title"] - TorBoard.Web</title>
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="~/css/site.css"/>
+	<title>TorBorad - @ViewData["Title"]</title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <header>
-	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-		<div class="container">
-			<a class="navbar-brand" asp-area="" asp-page="/Index">TorBoard.Web</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-			        aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-				<ul class="navbar-nav flex-grow-1">
-					<li class="nav-item">
-						<a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-					</li>
-					<li class="nav-item ml-auto">
-						<a class="nav-link btn btn-success" asp-page="/PostForm">+</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	@* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"> *@
+	@* 	<div class="container"> *@
+	@* 		<a class="navbar-brand" asp-area="" asp-page="/Index">TorBoard.Web</a> *@
+	@* 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" *@
+	@* 		        aria-expanded="false" aria-label="Toggle navigation"> *@
+	@* 			<span class="navbar-toggler-icon"></span> *@
+	@* 		</button> *@
+	@* 		<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between"> *@
+	@* 			<ul class="navbar-nav flex-grow-1"> *@
+	@* 				<li class="nav-item"> *@
+	@* 					<a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a> *@
+	@* 				</li> *@
+	@* 				<li class="nav-item"> *@
+	@* 					<a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a> *@
+	@* 				</li> *@
+	@* 				<li class="nav-item ml-auto"> *@
+	@* 					<a class="nav-link btn btn-success" asp-page="/PostForm">+</a> *@
+	@* 				</li> *@
+	@* 			</ul> *@
+	@* 		</div> *@
+	@* 	</div> *@
+	@* </nav> *@
+	<nav id="navbar">
+    	<a class="nav-item navbar-brand" asp-page="/Index">TorBoard</a>
+    	<a class="nav-item" asp-page="/Index">Home</a>
+    	<a class="nav-item" asp-page="/Rules">Rules</a>
+    	<a class="nav-item" id="add-btn" asp-page="/PostForm">
+    		<i class="fas fa-plus"></i>
+    	</a>
+    </nav>
 </header>
 <div class="container">
 	<main role="main" class="pb-3">
@@ -45,7 +56,6 @@
 </footer>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 
 @await RenderSectionAsync("Scripts", required: false)
