@@ -5,7 +5,7 @@ namespace TorBoard.Web.Pages.Shared
 {
 	public class PostView : PageModel
 	{
-		public Post Post { get; private init; }
+		public Post Post { get; }
 
 		public PostView(Post post)
 		{

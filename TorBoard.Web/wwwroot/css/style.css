@@ -53,6 +53,10 @@ h1
 	font-size: 2rem;
 	padding: 0.5rem 1rem;
 	border-left: 1px solid var(--white);
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .nav-item:first-child
@@ -112,6 +116,7 @@ main
 	color: var(--danger);
 	font-weight: lighter;
 	font-style: italic;
+	text-align: center;
 }
 
 .form-button
@@ -160,4 +165,5 @@ main
 .post-content
 {
 	font-size: 1.25rem;
+	white-space: pre-line;
 }

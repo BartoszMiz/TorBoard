@@ -1,6 +1,7 @@
 ﻿@page
 @using TorBoard.Core.Services
 @using TorBoard.Web.Pages.Shared
+@using System.Linq
 @model IndexModel
 @inject PostService _postService;
 @{
@@ -8,7 +9,7 @@
 }
 
 @{
-	var posts = await _postService.GetPostsAsync();
+	var posts = (await _postService.GetPostsAsync()).OrderByDescending(x => x.CreationDate);
 	if (posts.Any())
 	{
 		@foreach (var post in posts)

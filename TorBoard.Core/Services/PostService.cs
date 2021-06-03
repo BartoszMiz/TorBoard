@@ -20,6 +20,7 @@ namespace TorBoard.Core.Services
 
 		public async Task AddPostAsync(Post post)
 		{
+			// post.Content = TextProcessingService.ConvertText(post.Content);
 			await _dbContext.Posts.AddAsync(post);
 			await _dbContext.SaveChangesAsync();
 		}
