@@ -4,8 +4,8 @@
 	Layout = null;
 }
 
-<article class="border my-2">
-	<h5>@Model.Post.Id</h5>
-	<h6>@Model.Post.CreationDate.ToString("(ddd) dd-MMM-yyyy HH:mm")</h6>
-	<p>@Model.Post.Content</p>
+<article class="post">
+	<h5 class="post-id">@Model.Post.Id</h5>
+	<h6 class="post-date">@Model.Post.CreationDate.ToString("(ddd) dd-MMM-yyyy HH:mm")</h6>
+	<p class="post-content">@Model.Post.Content</p>
 </article>
