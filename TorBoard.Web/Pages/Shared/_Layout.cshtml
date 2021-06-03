@@ -13,19 +13,18 @@
 <body>
 <header>
 	<nav id="navbar">
-    	<a class="nav-item navbar-brand" asp-page="/Index">TorBoard</a>
-    	<a class="nav-item" asp-page="/Index">Home</a>
-    	<a class="nav-item" asp-page="/Rules">Rules</a>
-    	<a class="nav-item" id="add-btn" asp-page="/PostForm">
-    		<i class="fas fa-plus"></i>
-    	</a>
-    </nav>
+		<a class="nav-item navbar-brand" asp-page="/Index">TorBoard</a>
+		<a class="nav-item" asp-page="/Index">Home</a>
+		<a class="nav-item" asp-page="/Rules">Rules</a>
+		<a class="nav-item" id="add-btn" asp-page="/PostForm">
+			<i class="fas fa-plus"></i>
+		</a>
+	</nav>
 </header>
-<div class="container">
-	<main role="main" class="pb-3">
-		@RenderBody()
-	</main>
-</div>
+
+<main role="main">
+	@RenderBody()
+</main>
 
 <footer>
 	&copy; 2021 - TorBoard

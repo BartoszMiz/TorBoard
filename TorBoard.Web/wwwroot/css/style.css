@@ -29,6 +29,14 @@ a
     text-decoration: none;
 }
 
+h1
+{
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 0.1ch;
+}
+
 #navbar
 {
     width: auto;
@@ -82,4 +90,45 @@ footer
     text-align: center;
     background-color: var(--dark-grey);
     padding: 0.25rem 0;
+}
+
+main
+{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-textarea
+{
+    display: block;
+    min-width: 750px;
+    font-size: 1rem;
+}
+
+.form-validation
+{
+    display: block;
+    color: var(--danger);
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.form-button
+{
+    display: block;
+    background-color: var(--success);
+    color: var(--white);
+    border-radius: 10%;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0.5rem auto;
+    outline: none;
+    border: none;
+}
+
+.form-button:hover
+{
+    opacity: 75%;
 }

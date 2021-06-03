@@ -6,10 +6,8 @@
 }
 
 <form method="Post">
-	<div class="form-group">
-		<label>Write your post.</label>
-		<textarea class="form-control" rows="3" asp-for="Post.Content"></textarea>
-	</div>
-	<button class="btn btn-success">Post</button>
-	<span asp-validation-for="Post.Content" class="text-danger"></span>
+	<h1>New post</h1>
+	<textarea class="form-textarea" rows="10" asp-for="Post.Content"></textarea>
+	<span asp-validation-for="Post.Content" class="form-validation"></span>
+	<button class="form-button"><i class="fas fa-plus"></i></button>
 </form>
