@@ -7,9 +7,15 @@
 	ViewData["Title"] = "Home page";
 }
 
-<h1 class="display-4">Welcome</h1>
-
-@foreach (var post in _postService.GetPosts())
-{
-	await Html.RenderPartialAsync("Shared/_PostView", new PostView(post));
+@{
+	var posts = await _postService.GetPostsAsync();
+	if (posts.Any())
+	{
+		@foreach (var post in posts)
+			await Html.RenderPartialAsync("Shared/_PostView", new PostView(post));
+	}
+	else
+	{
+		<h1 class="display-4">Welcome</h1>
+	}
 }

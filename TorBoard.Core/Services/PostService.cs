@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using TorBoard.Core.Models;
 
 namespace TorBoard.Core.Services
@@ -13,9 +14,9 @@ namespace TorBoard.Core.Services
 			_dbContext = dbContext;
 		}
 
-		public IEnumerable<Post> GetPosts()
+		public async Task<Post[]> GetPostsAsync()
 		{
-			return _dbContext.Posts;
+			return await _dbContext.Posts.ToArrayAsync();
 		}
 
 		public async Task AddPostAsync(Post post)
