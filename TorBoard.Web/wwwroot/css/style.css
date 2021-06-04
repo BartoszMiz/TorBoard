@@ -149,8 +149,8 @@ footer
 
 main
 {
-	width: 1000px;
-	margin: 0 auto;
+	max-width: 1500px;
+	margin: 0 5rem;
 }
 
 .form-textarea
@@ -252,7 +252,7 @@ main
 	content: "\2022";
 }
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 650px)
 {
 	.navbar-btn
 	{
@@ -274,5 +274,38 @@ main
 		padding-bottom: 0.3rem;
 		border-top: 1px solid var(--white);
 		border-left: none;
+	}
+
+	main
+	{
+		margin: 0 1rem;
+	}
+
+	.post-id
+	{
+		font-size: 1.25rem;
+	}
+
+	.post-date
+	{
+		font-size: 0.85rem;
+	}
+
+	.post-content
+	{
+		font-size: 1rem;
+	}
+
+	.greentext
+	{
+		font-size: 0.9rem;
+	}
+}
+
+@media only screen and (max-width: 550px)
+{
+	.post-id
+	{
+		font-size: 0.9rem;
 	}
 }
