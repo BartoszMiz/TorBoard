@@ -176,3 +176,27 @@ main
 	font-family: 'Merriweather', serif;
 	font-size: 1.1rem;
 }
+
+.spoiler
+{
+	background-color: black;
+	color: black;
+	padding: 0 0.5ch;
+}
+
+.spoiler:hover
+{
+	background-color: inherit;
+	color: inherit;
+	cursor: pointer;
+}
+
+.list-item
+{
+	margin: 0 0 0 1.25rem;
+}
+
+.list-item:before
+{
+	content: "\2022";
+}

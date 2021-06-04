@@ -8,5 +8,9 @@ for (let i = 0; i < posts.length; i++)
 {
 	let post = posts[i];
 	post.innerHTML = post.innerHTML.replaceAll(/(&gt;.+)/g, "<span class=\"greentext\">$1</span>");
+	post.innerHTML = post.innerHTML.replaceAll(/\[spoiler](.+)\[\/spoiler]/g, "<span class=\"spoiler\">$1</span>");
+	post.innerHTML = post.innerHTML.replaceAll(/\*\*(.+)\*\*/g, "<b>$1</b>");
+	post.innerHTML = post.innerHTML.replaceAll(/\*(.+)\*/g, "<i>$1</i>");
+	post.innerHTML = post.innerHTML.replaceAll(/\*(.+)/g, "<span class=\"list-item\">$1</span>");
 }
 
