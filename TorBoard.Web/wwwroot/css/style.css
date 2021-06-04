@@ -167,3 +167,12 @@ main
 	font-size: 1.25rem;
 	white-space: pre-line;
 }
+
+.greentext
+{
+	display: inline-block;
+	margin-left: 1ch;
+	color: var(--info);
+	font-family: 'Merriweather', serif;
+	font-size: 1.1rem;
+}
