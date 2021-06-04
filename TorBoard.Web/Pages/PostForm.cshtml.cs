@@ -22,10 +22,7 @@ namespace TorBoard.Web.Pages
 		{
 			Post.Id = Guid.NewGuid();
 			Post.CreationDate = DateTime.Now;
-			if (!ModelState.IsValid)
-			{
-				return Page();
-			}
+			if (!ModelState.IsValid) return Page();
 
 			await _postService.AddPostAsync(Post);
 			return RedirectToPage("Index");

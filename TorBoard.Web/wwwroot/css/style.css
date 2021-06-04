@@ -37,26 +37,81 @@ h1
 	letter-spacing: 0.1ch;
 }
 
-#navbar
+.navbar
 {
-	width: auto;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background-color: var(--dark-grey);
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.logo
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5rem;
+	margin-left: 0.5ch;
+	margin-right: 0.5ch;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+
+.logo-text
+{
+	margin-left: 1ch;
+	letter-spacing: 0.1ch;
+}
+
+.logo-text:hover
+{
+	opacity: 50%;
+}
+
+.navbar-btn
+{
+	display: none;
+	margin-left: auto;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.25rem;
+	text-align: center;
+	border-radius: 0.25rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: var(--success);
+	background-color: var(--grey);
+}
+
+.navbar-btn:hover
+{
+	background-color: var(--light-grey);
+}
+
+.navmenu
+{
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	background-color: var(--dark-grey);
-	padding: 0.5rem 1rem;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .nav-item
 {
-	display: block;
-	font-size: 2rem;
-	padding: 0.5rem 1rem;
-	border-left: 1px solid var(--white);
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+	list-style-type: none;
+	text-align: center;
+	font-size: 1.25rem;
+	text-transform: capitalize;
+	flex: 1;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-left: 2px solid var(--white);
 }
 
 .nav-item:first-child
@@ -64,28 +119,24 @@ h1
 	border-left: none;
 }
 
-.nav-item:hover
+.nav-item a
 {
-	color: var(--light-grey);
+	display: block;
 }
 
-.navbar-brand
+.nav-item a:hover
 {
-	font-size: 3rem;
-	padding: 0;
-	margin-right: 2rem;
+	opacity: 50%;
 }
 
 #add-btn
 {
-	color: var(--success);
-	margin-left: auto;
-	border-left: none;
+	color: var(--white);
 }
 
 #add-btn:hover
 {
-	opacity: 75%;
+	color: var(--success);
 }
 
 footer
@@ -179,8 +230,8 @@ main
 
 .spoiler
 {
-	background-color: black;
-	color: black;
+	background-color: var(--dark-grey);
+	color: var(--dark-grey);
 	padding: 0 0.5ch;
 }
 
@@ -193,10 +244,35 @@ main
 
 .list-item
 {
-	margin: 0 0 0 1.25rem;
+	margin: 0 0 0 0.75rem;
 }
 
 .list-item:before
 {
 	content: "\2022";
+}
+
+@media only screen and (max-width: 600px)
+{
+	.navbar-btn
+	{
+		display: inline-block;
+	}
+
+	.navmenu
+	{
+		display: none;
+		flex-direction: column;
+		margin: 0;
+		padding: 0;
+		border-top: none;
+	}
+
+	.nav-item
+	{
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		border-top: 1px solid var(--white);
+		border-left: none;
+	}
 }
