@@ -1,3 +1,4 @@
+using AspNetCore.ReCaptcha;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace TorBoard.Web
 				opt.UseSqlite(Configuration.GetConnectionString("SQLite"), options =>
 					options.MigrationsAssembly("TorBoard.Migrations")));
 			services.AddScoped<PostService>();
+			services.AddReCaptcha(Configuration.GetSection("reCAPTCHA"));
 
 			services.AddRazorPages();
 		}
@@ -35,7 +37,7 @@ namespace TorBoard.Web
 			using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
 			{
 				var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
-				context.Database.Migrate();
+				context?.Database.Migrate();
 			}
 
 			if (env.IsDevelopment())

@@ -253,6 +253,14 @@ main
 	content: "\2022";
 }
 
+.g-recaptcha
+{
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 @media only screen and (max-width: 650px)
 {
 	.navbar-btn

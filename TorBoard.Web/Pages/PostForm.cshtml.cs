@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AspNetCore.ReCaptcha;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorBoard.Core.Models;
@@ -7,6 +8,7 @@ using TorBoard.Core.Services;
 
 namespace TorBoard.Web.Pages
 {
+	[ValidateReCaptcha(ErrorMessage = "Please verify you are not a robot.")]
 	public class PostForm : PageModel
 	{
 		private readonly PostService _postService;

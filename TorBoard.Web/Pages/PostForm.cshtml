@@ -1,5 +1,8 @@
 ﻿@page
+@using Microsoft.Extensions.Configuration
+@using AspNetCore.ReCaptcha
 @model TorBoard.Web.Pages.PostForm
+@inject IConfiguration _configuration;
 
 @{
 	ViewData["Title"] = "Add new post";
@@ -9,6 +12,9 @@
 	<h1>New post</h1>
 	<textarea class="form-textarea" rows="15" asp-for="Post.Content"></textarea>
 	<span asp-validation-for="Post.Content" class="form-validation"></span>
+
+	@Html.ReCaptcha(theme: "dark")
+
 	<button class="form-button">
 		<i class="fas fa-plus"></i>
 	</button>
