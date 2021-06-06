@@ -160,6 +160,10 @@ main
 	font-size: 1rem;
 	padding: 0;
 	margin: 0 auto;
+	background-color: var(--light-grey);
+	color: var(--white);
+	border-color: var(--dark-grey);
+	resize: vertical;
 }
 
 .form-validation
