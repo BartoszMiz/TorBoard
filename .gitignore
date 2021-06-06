@@ -38,3 +38,4 @@ msbuild.wrn
 
 Publish/
 TorBoard.Web/app.db
+TorBoard.Web/appsettings.Development.json
