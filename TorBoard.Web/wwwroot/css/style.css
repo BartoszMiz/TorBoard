@@ -208,6 +208,7 @@ main
 	font-size: 1.5rem;
 	font-weight: bold;
 	margin: 0.25rem 0;
+	cursor: pointer;
 }
 
 .post-date
@@ -263,6 +264,44 @@ main
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.reply-textarea
+{
+	display: block;
+	width: clamp(350px, 100%, 1000px);
+	font-size: 1rem;
+	padding: 0;
+	margin-left: 3rem;
+	background-color: var(--dark-grey);
+	color: var(--white);
+	border-style: solid;
+	border-color: var(--light-grey);
+	resize: vertical;
+}
+
+.reply-controls
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+	margin-left: 3rem;
+}
+
+.reply-button
+{
+	display: block;
+	background-color: var(--success);
+	color: var(--white);
+	border-radius: 10%;
+	font-size: 1.25rem;
+	text-align: center;
+	padding: 0.5rem;
+	margin-left: 0.5rem;
+	outline: none;
+	border: none;
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 650px)

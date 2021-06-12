@@ -14,3 +14,29 @@ for (let i = 0; i < posts.length; i++)
 	post.innerHTML = post.innerHTML.replaceAll(/\*(.+)/g, "<span class=\"list-item\">$1</span>");
 }
 
+const replyFormDict = {};
+const postWrappers = document.getElementsByClassName("post-wrapper");
+for (let i = 0; i < postWrappers.length; i++)
+{
+	const replyForm = postWrappers[i].getElementsByClassName("reply-form")[0];
+	let postId = postWrappers[i].getElementsByClassName("post-id")[0].innerHTML;
+	replyFormDict[postId] = replyForm;
+}
+
+function hideAllForms(formsDict)
+{
+	for (let formId in formsDict)
+	{
+		if (formsDict.hasOwnProperty((formId)))
+			formsDict[formId].style.display = "none";
+	}
+}
+
+hideAllForms(replyFormDict);
+
+function showReplyForm(postId)
+{
+	hideAllForms(replyFormDict);
+	replyFormDict[postId].style.display = "block";
+}
+

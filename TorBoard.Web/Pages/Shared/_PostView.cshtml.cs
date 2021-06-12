@@ -11,5 +11,6 @@ namespace TorBoard.Web.Pages.Shared
 		}
 
 		public Post Post { get; }
+		public Post NewPost { get; }
 	}
 }
