@@ -1,0 +1,22 @@
+﻿@page "/{postId}"
+@using AspNetCore.ReCaptcha
+@using TorBoard.Web.Pages.Shared
+@model TorBoard.Web.Pages.ReplyForm
+
+@{
+	ViewData["Title"] = "Reply";
+}
+
+@{ await Html.RenderPartialAsync("Shared/_PostView", new PostView(Model.Post));}
+
+<form method="Post">
+	<h1>Reply</h1>
+	<textarea class="form-textarea" rows="15" asp-for="Reply.Content"></textarea>
+	<span asp-validation-for="Reply.Content" class="form-validation"></span>
+
+	@Html.ReCaptcha(theme: "dark")
+
+	<button class="form-button">
+		<i class="fas fa-plus"></i>
+	</button>
+</form>

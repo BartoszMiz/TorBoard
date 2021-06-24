@@ -1,29 +1,27 @@
-﻿@using AspNetCore.ReCaptcha
-@model PostView
+﻿@model PostView
 
 @{
 	Layout = null;
+	var replyUrlData = new Dictionary<string, string>()
+	{
+		{"postId", @Model.Post.Id.ToString()}
+	};
 }
 
-<div class="post-wrapper">
+<div class="post-wrapper" id="@Model.Post.Id">
 	<article class="post">
-    	<a title="Click to reply!" onclick="showReplyForm('@Model.Post.Id')">
-    		<h5 class="post-id">@Model.Post.Id</h5>
-    	</a>
+		<a title="Click to reply!" asp-page="ReplyForm" asp-all-route-data="@replyUrlData">
+			<h5 class="post-id">@Model.Post.Id</h5>
+		</a>
+
+		@if (Model.Post.ReplyTo != null)
+		{
+			<a href="#@Model.Post.ReplyTo.Id">
+				<h6 class="post-date">Reply to @Model.Post.ReplyTo.Id</h6>
+			</a>
+		}
+
     	<h6 class="post-date">@Model.Post.CreationDate.ToString("(ddd) dd-MMM-yyyy HH:mm")</h6>
     	<p class="post-content">@Model.Post.Content</p>
     </article>
-
-    <form method="Post" class="reply-form">
-    	<textarea class="reply-textarea" rows="5" asp-for="NewPost.Content"></textarea>
-        <span asp-validation-for="NewPost.Content" class="form-validation"></span>
-
-    	<div class="reply-controls">
-    		@Html.ReCaptcha(theme: "dark")
-
-            <button class="reply-button">
-                Reply
-            </button>
-    	</div>
-    </form>
 </div>
