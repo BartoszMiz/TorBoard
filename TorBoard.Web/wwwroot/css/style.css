@@ -219,13 +219,21 @@ main
 	margin: 0.1rem 0.25rem;
 }
 
+.post-reply
+{
+	font-size: 1rem;
+	font-weight: bold;
+	font-style: italic;
+	margin: 0.1rem 0.25rem;
+}
+
 .post-content
 {
 	font-size: 1.25rem;
 	white-space: pre-line;
 }
 
-.greentext
+.green-text
 {
 	display: inline-block;
 	margin-left: 1ch;
@@ -348,7 +356,7 @@ main
 		font-size: 1rem;
 	}
 
-	.greentext
+	.green-text
 	{
 		font-size: 0.9rem;
 	}
