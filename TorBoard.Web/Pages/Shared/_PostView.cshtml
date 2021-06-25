@@ -2,15 +2,11 @@
 
 @{
 	Layout = null;
-	var replyUrlData = new Dictionary<string, string>()
-	{
-		{"postId", @Model.Post.Id.ToString()}
-	};
 }
 
 <div class="post-wrapper" id="@Model.Post.Id">
 	<article class="post">
-		<a title="Click to reply!" asp-page="ReplyForm" asp-all-route-data="@replyUrlData">
+		<a title="Click to reply!" asp-page="PostForm" asp-route-postId="@Model.Post.Id">
 			<h5 class="post-id">@Model.Post.Id</h5>
 		</a>
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AspNetCore.ReCaptcha;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TorBoard.Core.Models;
@@ -8,7 +7,6 @@ using TorBoard.Core.Services;
 
 namespace TorBoard.Web.Pages
 {
-	[ValidateReCaptcha(ErrorMessage = "Please verify you are not a robot.")]
 	public class PostForm : PageModel
 	{
 		private readonly PostService _postService;
@@ -18,15 +16,28 @@ namespace TorBoard.Web.Pages
 			_postService = postService;
 		}
 
-		[BindProperty] public Post Post { get; set; }
+		public Post CurrentPost { get; set; }
+		[BindProperty] public Post NewPost { get; set; }
 
-		public async Task<IActionResult> OnPost()
+		public async Task<IActionResult> OnGet(Guid? postId)
 		{
-			Post.Id = Guid.NewGuid();
-			Post.CreationDate = DateTime.Now;
-			if (!ModelState.IsValid) return Page();
+			if (postId != null) CurrentPost = await _postService.GetPostAsync((Guid) postId);
+			return Page();
+		}
 
-			await _postService.AddPostAsync(Post);
+		public async Task<IActionResult> OnPost(Guid? postId)
+		{
+			NewPost.Id = Guid.NewGuid();
+			NewPost.CreationDate = DateTime.Now;
+			if (postId != null)
+				NewPost.ReplyTo = await _postService.GetPostAsync((Guid) postId);
+
+			if (!ModelState.IsValid)
+			{
+				return Page();
+			}
+
+			await _postService.AddPostAsync(NewPost);
 			return RedirectToPage("Index");
 		}
 	}
