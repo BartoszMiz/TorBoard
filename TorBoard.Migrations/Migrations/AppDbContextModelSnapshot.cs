@@ -29,23 +29,12 @@ namespace TorBoard.Migrations.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("ReplyToId")
+                    b.Property<Guid?>("ParentId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ReplyToId");
-
                     b.ToTable("Posts");
-                });
-
-            modelBuilder.Entity("TorBoard.Core.Models.Post", b =>
-                {
-                    b.HasOne("TorBoard.Core.Models.Post", "ReplyTo")
-                        .WithMany()
-                        .HasForeignKey("ReplyToId");
-
-                    b.Navigation("ReplyTo");
                 });
 #pragma warning restore 612, 618
         }

@@ -10,10 +10,10 @@
 			<h5 class="post-id">@Model.Post.Id</h5>
 		</a>
 
-		@if (Model.Post.ReplyTo != null)
+		@if (Model.Post.ParentId != null)
 		{
-			<a href="#@Model.Post.ReplyTo.Id">
-				<h6 class="post-reply">Reply to @Model.Post.ReplyTo.Id</h6>
+			<a href="#@Model.Post.ParentId">
+				<h6 class="post-reply">Reply to @Model.Post.ParentId</h6>
 			</a>
 		}
 

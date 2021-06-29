@@ -30,7 +30,7 @@ namespace TorBoard.Web.Pages
 			NewPost.Id = Guid.NewGuid();
 			NewPost.CreationDate = DateTime.Now;
 			if (postId != null)
-				NewPost.ReplyTo = await _postService.GetPostAsync((Guid) postId);
+				NewPost.ParentId = postId;
 
 			if (!ModelState.IsValid)
 			{

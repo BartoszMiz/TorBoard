@@ -8,10 +8,10 @@
 }
 
 @{
-	var posts = (await _postService.GetPostsAsync()).OrderByDescending(x => x.CreationDate);
-	if (posts.Any())
+	var posts = (await _postService.GetPostsAsync()).OrderByDescending(x => x.CreationDate).ToArray();
+	if (posts.Length > 0)
 	{
-		@foreach (var post in posts)
+		foreach (var post in posts)
 			await Html.RenderPartialAsync("Shared/_PostView", new PostView(post));
 	}
 	else

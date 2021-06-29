@@ -12,7 +12,7 @@ namespace TorBoard.Core.Models
 		public string Content { get; set; }
 
 #nullable enable
-		public Post? ReplyTo { get; set; } = null;
+		public Guid? ParentId { get; set; }
 #nullable disable
 	}
 }
