@@ -211,6 +211,11 @@ main
 	cursor: pointer;
 }
 
+.post-id:hover
+{
+	color: var(--success);
+}
+
 .post-date
 {
 	font-size: 1rem;
@@ -225,6 +230,11 @@ main
 	font-weight: bold;
 	font-style: italic;
 	margin: 0.1rem 0.25rem;
+}
+
+.post-reply:hover
+{
+	color: var(--info);
 }
 
 .post-content
