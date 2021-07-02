@@ -137,6 +137,7 @@ h1
 #add-btn:hover
 {
 	color: var(--success);
+	opacity: 100%;
 }
 
 footer
