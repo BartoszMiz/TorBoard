@@ -1,0 +1,52 @@
+﻿@page
+@model TorBoard.Web.Pages.Info
+
+@{
+	ViewData["Title"] = "Info";
+}
+
+<h1>TorBoard Info</h1>
+
+<table class="formatting-table">
+	<thead>
+	<tr>
+		<th colspan="2">Text formatting options</th>
+	</tr>
+	<tr>
+		<th>Input</th>
+		<th>Output</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>>>Text</td>
+		<td>
+			<span class="green-text">Text</span>
+		</td>
+	</tr>
+	<tr>
+		<td>[spoiler]Text[/spoiler]</td>
+		<td>
+			<span class="spoiler">Text</span>
+		</td>
+	</tr>
+	<tr>
+		<td>**Text**</td>
+		<td>
+			<b>Text</b>
+		</td>
+	</tr>
+	<tr>
+		<td>*Text*</td>
+		<td>
+			<i>Text</i>
+		</td>
+	</tr>
+	<tr>
+		<td>*Text</td>
+		<td>
+			<span class="list-item">Text</span>
+		</td>
+	</tr>
+	</tbody>
+</table>
