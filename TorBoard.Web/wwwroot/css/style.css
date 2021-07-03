@@ -112,6 +112,7 @@ h1
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	border-left: 2px solid var(--white);
+	transition: 100ms;
 }
 
 .nav-item:first-child
@@ -124,9 +125,9 @@ h1
 	display: block;
 }
 
-.nav-item a:hover
+.nav-item:hover
 {
-	opacity: 50%;
+	letter-spacing: 0.1ch;
 }
 
 #add-btn
@@ -137,7 +138,6 @@ h1
 #add-btn:hover
 {
 	color: var(--success);
-	opacity: 100%;
 }
 
 footer
